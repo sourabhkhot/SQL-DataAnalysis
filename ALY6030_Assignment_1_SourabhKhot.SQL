@@ -1,3 +1,8 @@
+# Introduction
+# The provided car dataset was originally taken from # UCI Machine Learning Repository
+# MySQL Server and MySQL Workbench on the Windows system are used
+# Data modeling is performed by creating a table, importing data and exploring some business questions
+
 # Creating database to store table(s)
 CREATE DATABASE vehicle;
 # Check whether the database is created
@@ -19,7 +24,7 @@ CREATE TABLE car (
 	Origin VARCHAR(12)
 );
 
-# At this stage, import data from CSV manually using the following steps
+# At this stage, import data from CSV manually from https://archive.ics.uci.edu/ml/datasets/Auto+MPG using the following steps
 # Refresh schema on the left. Under 'vehicle' database > Tables > right click 'car' table
 # Click on Table Data Import Wizard, choose the path location pointing to 'cars-2.csv'.
 # Choose to import in existing 'car' table, columns should be mapped automatically and import
@@ -49,3 +54,9 @@ SELECT Cylinders, ROUND(AVG(Displacement),2) AS Avg_Disp
 FROM car
 GROUP BY Cylinders
 ORDER BY Avg_Disp ASC;
+
+# Conclusion
+# There were 11 unique ford models having weight between 3000 and 4000 pounds with Ford Grenada
+# gl as lightest and Ford F108 as heaviest. Most of the fastest accelerating cars were from US.
+# In general, Japan origin cars were most fuel efficient while US cars were least efficient.
+# We observed that average displacement is positive correlated with number of cylinders in a car engine.
