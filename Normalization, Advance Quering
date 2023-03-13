@@ -1,4 +1,6 @@
-# ALY 6030 Assignment 2 Sourabh Khot Submission
+# INTRODUCTION
+# I will use the ebay auction dataset, perform Data Normalization to 3NF form
+# And perform advanced SQL querying, ERD Diagram
 
 # PART 1: Database Normalization
 
@@ -22,6 +24,7 @@ CREATE TABLE bidtxn (
 );
 
 # At this stage, import 'ebay.csv' dataset using 'Table Data Import Wizard' and map columns
+# https://www.kaggle.com/datasets/onlineauctions/online-auctions-dataset
 
 # Verify data added into table
 SELECT * FROM bidtxn;
@@ -166,3 +169,12 @@ FROM bidtxn t
     JOIN auction a ON t.auctionid = a.auctionid
 GROUP By a.auctionid
 ORDER BY a.auctionid;
+
+# CONCLUSION
+# The ‘eBay online auction’ flat database was imported and normalized to a third form, reducing redundancies.
+# Four entities were created in a star topology with one fact table (bid transactions) and three dimension tables
+# (auction, bid, bidder). ER diagram was reverse engineered and presented with entities and relationships defined in detail.
+
+# Business questions were framed and answered for three unique stakeholders: the seller, the product manager and the program manager.
+# The seller could see the bidders, bid value and time for their auction. The product manager could analyze the top five products by
+# popularity (number of bids) and see their prices. The program manager can understand how much price the seller earned for an auction.
